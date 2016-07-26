@@ -1,2 +1,3 @@
-# wocli_api_server
-API server for Wocli synchronization.
+# This is the Wocli API server.
+
+It provides credentials, synchronization and database to the wocli client.
