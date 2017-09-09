@@ -2,6 +2,7 @@ package WocliApiServer;
 use Mojo::Base 'Mojolicious';
 
 use WocliApiServer::Model::Users;
+use WocliApiServer::Controller::Addons;
 
 # This method will run once at server start
 sub startup {
@@ -16,6 +17,10 @@ sub startup {
 	$logged_in->get('/protected')->to('login#protected');
 
 	$r->get('/logout')->to('login#logout');
+	
+	WocliApiServer::Controller::Addons::build_db();
+	
+	$r->get('/builddb')->to('addons#build_db');
 }
 
 1;
